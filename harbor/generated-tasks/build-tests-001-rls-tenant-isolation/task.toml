@@ -1,0 +1,43 @@
+schema_version = "1.0"
+
+[task]
+name = "supabase/build-tests-001-rls-tenant-isolation"
+description = "Harbor adaptation of Supabase eval build-tests-001-rls-tenant-isolation"
+authors = [{ name = "Supabase" }, { name = "Harbor migration prototype" }]
+keywords = ["supabase", "eval", "build", "benchmark", "database", "tests", "rls"]
+
+[metadata]
+source_repository = "https://github.com/supabase/evals"
+source_eval = "build-tests-001-rls-tenant-isolation"
+source_path = "evals/build-tests-001-rls-tenant-isolation"
+source_stage = "build"
+source_suite = "benchmark"
+source_interface = "cli"
+source_products = ["database"]
+source_topics = ["tests", "rls"]
+source_mode = "local-stack"
+migration_status = "runnable-pilot"
+scorer_features = ["localCommands", "transcript", "llmJudge"]
+source_prompt_sha256 = "6fac928c5b42cdbd9bd6a3e0647260d4182c3ea6967ed0f7f0a56de380e54bca"
+source_scorer_sha256 = "3c38a3df503a7036c60d9efbabbad64f65fb43de040851991c62599719e883d3"
+scorer_authority = "upstream-eval"
+judge_policy = "preserve-source-judge"
+
+[verifier]
+timeout_sec = 120.0
+network_mode = "public"
+
+[agent]
+timeout_sec = 720.0
+network_mode = "public"
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 20480
+gpus = 0
+
+[verifier.env]
+
+[solution.env]

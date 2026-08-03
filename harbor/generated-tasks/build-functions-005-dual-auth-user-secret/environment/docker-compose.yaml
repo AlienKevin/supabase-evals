@@ -1,0 +1,13 @@
+services:
+  main:
+    network_mode: host
+    command: ["bash", "-lc", "mkdir -p /app; cp -a /opt/task-seed/. /app/; touch /app/.harbor-host-workspace; rm -f /tmp/supabase-ready /tmp/supabase-start.failed; if /usr/local/bin/supabase-real start -x realtime,storage-api,imgproxy,mailpit,postgres-meta,studio,logflare,vector,supavisor > /tmp/supabase-start.log 2>&1; then touch /tmp/supabase-ready; else touch /tmp/supabase-start.failed; cat /tmp/supabase-start.log; exit 1; fi; exec sleep infinity"]
+    volumes:
+      # Match the source harness's live workspace bind. Supabase CLI launches
+      # Edge Runtime as a sibling container on this daemon, so both processes
+      # must resolve the same absolute /app path.
+      - /app:/app
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      SUPABASE_EXCLUDED_SERVICES: "realtime,storage-api,imgproxy,mailpit,postgres-meta,studio,logflare,vector,supavisor"
+      SUPABASE_PRESTART: "1"

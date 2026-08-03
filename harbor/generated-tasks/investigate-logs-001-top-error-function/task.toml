@@ -1,0 +1,43 @@
+schema_version = "1.0"
+
+[task]
+name = "supabase/investigate-logs-001-top-error-function"
+description = "Harbor adaptation of Supabase eval investigate-logs-001-top-error-function"
+authors = [{ name = "Supabase" }, { name = "Harbor migration prototype" }]
+keywords = ["supabase", "eval", "investigate", "other", "edge-functions", "observability"]
+
+[metadata]
+source_repository = "https://github.com/supabase/evals"
+source_eval = "investigate-logs-001-top-error-function"
+source_path = "evals/investigate-logs-001-top-error-function"
+source_stage = "investigate"
+source_suite = "other"
+source_interface = "mcp"
+source_products = ["edge-functions"]
+source_topics = ["observability"]
+source_mode = "tools"
+migration_status = "runnable-pilot"
+scorer_features = ["agentReport"]
+source_prompt_sha256 = "fe71263c32020abdda77e9574aa1ae3bdd6a3186a7f65280f55234a7893593b2"
+source_scorer_sha256 = "03c117499bfbde1fa6e93d470516ab65204486e6c8d7c28f62e1886559e638e7"
+scorer_authority = "upstream-eval"
+judge_policy = "preserve-source-judge"
+
+[verifier]
+timeout_sec = 120.0
+network_mode = "public"
+
+[agent]
+timeout_sec = 720.0
+network_mode = "public"
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 20480
+gpus = 0
+
+[verifier.env]
+
+[solution.env]

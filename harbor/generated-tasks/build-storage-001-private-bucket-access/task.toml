@@ -1,0 +1,43 @@
+schema_version = "1.0"
+
+[task]
+name = "supabase/build-storage-001-private-bucket-access"
+description = "Harbor adaptation of Supabase eval build-storage-001-private-bucket-access"
+authors = [{ name = "Supabase" }, { name = "Harbor migration prototype" }]
+keywords = ["supabase", "eval", "build", "benchmark", "storage", "database", "rls", "sdk"]
+
+[metadata]
+source_repository = "https://github.com/supabase/evals"
+source_eval = "build-storage-001-private-bucket-access"
+source_path = "evals/build-storage-001-private-bucket-access"
+source_stage = "build"
+source_suite = "benchmark"
+source_interface = "mcp"
+source_products = ["storage", "database"]
+source_topics = ["rls", "sdk"]
+source_mode = "tools"
+migration_status = "runnable-pilot"
+scorer_features = ["database", "transcript", "llmJudge"]
+source_prompt_sha256 = "b9be166dc6e9b3e68a752ed9a9b245e37361caaa6d399c3c067f436de2b81f79"
+source_scorer_sha256 = "d4ddf1e001e0a9e1a1d319fe0a9562bab02c6c7f0b17f6e24462c64a18b22a45"
+scorer_authority = "upstream-eval"
+judge_policy = "preserve-source-judge"
+
+[verifier]
+timeout_sec = 120.0
+network_mode = "public"
+
+[agent]
+timeout_sec = 720.0
+network_mode = "public"
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 20480
+gpus = 0
+
+[verifier.env]
+
+[solution.env]

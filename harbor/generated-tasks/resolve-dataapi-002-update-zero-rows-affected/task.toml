@@ -1,0 +1,43 @@
+schema_version = "1.0"
+
+[task]
+name = "supabase/resolve-dataapi-002-update-zero-rows-affected"
+description = "Harbor adaptation of Supabase eval resolve-dataapi-002-update-zero-rows-affected"
+authors = [{ name = "Supabase" }, { name = "Harbor migration prototype" }]
+keywords = ["supabase", "eval", "resolve", "regression", "data-api", "database", "rls"]
+
+[metadata]
+source_repository = "https://github.com/supabase/evals"
+source_eval = "resolve-dataapi-002-update-zero-rows-affected"
+source_path = "evals/resolve-dataapi-002-update-zero-rows-affected"
+source_stage = "resolve"
+source_suite = "regression"
+source_interface = "unspecified"
+source_products = ["data-api", "database"]
+source_topics = ["rls"]
+source_mode = "tools"
+migration_status = "runnable-pilot"
+scorer_features = ["database", "transcript", "llmJudge"]
+source_prompt_sha256 = "0f5654a27f11c9265e1d4052e21f9fb463f47ec34bebe3ff9d9d16ffba19c259"
+source_scorer_sha256 = "2d78611052d8672bef913c09a28f5b17d7da41b75b05116bf8a57d638d81c7e7"
+scorer_authority = "upstream-eval"
+judge_policy = "preserve-source-judge"
+
+[verifier]
+timeout_sec = 120.0
+network_mode = "public"
+
+[agent]
+timeout_sec = 720.0
+network_mode = "public"
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 20480
+gpus = 0
+
+[verifier.env]
+
+[solution.env]

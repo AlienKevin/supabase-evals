@@ -1,0 +1,12 @@
+{
+  "name": "supabase-evals-harbor-source-runtime",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@supabase/supabase-js": "2.105.1",
+    "common-tags": "1.8.2",
+    "openapi-fetch": "0.13.8",
+    "postgres": "3.4.7",
+    "tsx": "4.21.0"
+  }
+}

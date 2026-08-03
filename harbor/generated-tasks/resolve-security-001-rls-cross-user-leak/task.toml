@@ -1,0 +1,43 @@
+schema_version = "1.0"
+
+[task]
+name = "supabase/resolve-security-001-rls-cross-user-leak"
+description = "Harbor adaptation of Supabase eval resolve-security-001-rls-cross-user-leak"
+authors = [{ name = "Supabase" }, { name = "Harbor migration prototype" }]
+keywords = ["supabase", "eval", "resolve", "other", "database", "auth", "rls", "security"]
+
+[metadata]
+source_repository = "https://github.com/supabase/evals"
+source_eval = "resolve-security-001-rls-cross-user-leak"
+source_path = "evals/resolve-security-001-rls-cross-user-leak"
+source_stage = "resolve"
+source_suite = "other"
+source_interface = "mcp"
+source_products = ["database", "auth"]
+source_topics = ["rls", "security"]
+source_mode = "tools"
+migration_status = "runnable-pilot"
+scorer_features = ["database"]
+source_prompt_sha256 = "376f1c5a16f8c54709788af9900ed801ba24301390c63e6636c5ce069f4f4957"
+source_scorer_sha256 = "7aa361ff85c2012316043d28963ea5c04a153c061fae5c204029ce2987ae7930"
+scorer_authority = "upstream-eval"
+judge_policy = "preserve-source-judge"
+
+[verifier]
+timeout_sec = 120.0
+network_mode = "public"
+
+[agent]
+timeout_sec = 720.0
+network_mode = "public"
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 20480
+gpus = 0
+
+[verifier.env]
+
+[solution.env]

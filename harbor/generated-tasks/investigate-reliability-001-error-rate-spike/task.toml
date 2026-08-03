@@ -1,0 +1,43 @@
+schema_version = "1.0"
+
+[task]
+name = "supabase/investigate-reliability-001-error-rate-spike"
+description = "Harbor adaptation of Supabase eval investigate-reliability-001-error-rate-spike"
+authors = [{ name = "Supabase" }, { name = "Harbor migration prototype" }]
+keywords = ["supabase", "eval", "investigate", "other", "edge-functions", "observability"]
+
+[metadata]
+source_repository = "https://github.com/supabase/evals"
+source_eval = "investigate-reliability-001-error-rate-spike"
+source_path = "evals/investigate-reliability-001-error-rate-spike"
+source_stage = "investigate"
+source_suite = "other"
+source_interface = "mcp"
+source_products = ["edge-functions"]
+source_topics = ["observability"]
+source_mode = "tools"
+migration_status = "runnable-pilot"
+scorer_features = ["agentReport"]
+source_prompt_sha256 = "2b6eb9e1264e08359829b54e6e0914dee1e349dda1b501eeb0bfda33f379eff1"
+source_scorer_sha256 = "ce3a12670fbfd94aa7c5815c3427ec94aa3836a9f714f4af720c75ac87525cdf"
+scorer_authority = "upstream-eval"
+judge_policy = "preserve-source-judge"
+
+[verifier]
+timeout_sec = 120.0
+network_mode = "public"
+
+[agent]
+timeout_sec = 720.0
+network_mode = "public"
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 20480
+gpus = 0
+
+[verifier.env]
+
+[solution.env]

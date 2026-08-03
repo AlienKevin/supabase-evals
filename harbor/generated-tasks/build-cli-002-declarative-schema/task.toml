@@ -1,0 +1,43 @@
+schema_version = "1.0"
+
+[task]
+name = "supabase/build-cli-002-declarative-schema"
+description = "Harbor adaptation of Supabase eval build-cli-002-declarative-schema"
+authors = [{ name = "Supabase" }, { name = "Harbor migration prototype" }]
+keywords = ["supabase", "eval", "build", "benchmark", "database", "declarative-schema", "migrations"]
+
+[metadata]
+source_repository = "https://github.com/supabase/evals"
+source_eval = "build-cli-002-declarative-schema"
+source_path = "evals/build-cli-002-declarative-schema"
+source_stage = "build"
+source_suite = "benchmark"
+source_interface = "cli"
+source_products = ["database"]
+source_topics = ["declarative-schema", "migrations"]
+source_mode = "local-stack"
+migration_status = "runnable-pilot"
+scorer_features = ["database", "localCommands", "transcript"]
+source_prompt_sha256 = "7d322ddba186854d3147b323165a6090e38baf789151bd85be9e647d0f0935f4"
+source_scorer_sha256 = "aae19ca91d2b11c4939288d24aad3d917a3c5ba52761f095deba871fc163d133"
+scorer_authority = "upstream-eval"
+judge_policy = "preserve-source-judge"
+
+[verifier]
+timeout_sec = 120.0
+network_mode = "public"
+
+[agent]
+timeout_sec = 720.0
+network_mode = "public"
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 20480
+gpus = 0
+
+[verifier.env]
+
+[solution.env]

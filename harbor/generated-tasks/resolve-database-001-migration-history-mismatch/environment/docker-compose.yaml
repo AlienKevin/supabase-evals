@@ -1,0 +1,34 @@
+services:
+  main:
+    network_mode: host
+    depends_on:
+      platform-lite:
+        condition: service_healthy
+    command: ["bash", "-lc", "mkdir -p /app/.supabase-evals /app/supabase/.temp; printf 'name: evals\\napi_url: http://127.0.0.1:7070\\ndashboard_url: http://127.0.0.1:7070\\nproject_host: supabase.co\\n' > /app/.supabase-evals/profile.yaml; printf 'evalshostedprojectxy\\n' > /app/supabase/.temp/project-ref; printf 'postgresql://postgres:postgres@127.0.0.1:6543/postgres?sslmode=disable\\n' > /app/supabase/.temp/pooler-url; rm -f /tmp/supabase-ready /tmp/supabase-start.failed; if /usr/local/bin/supabase-real start -x gotrue,realtime,storage-api,imgproxy,kong,mailpit,postgrest,postgres-meta,studio,edge-runtime,logflare,vector,supavisor > /tmp/supabase-start.log 2>&1; then touch /tmp/supabase-ready; else touch /tmp/supabase-start.failed; cat /tmp/supabase-start.log; exit 1; fi; exec sleep infinity"]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      SUPABASE_PLATFORM_URL: http://127.0.0.1:7070
+      SUPABASE_PROJECT_REF: evalshostedprojectxy
+      SUPABASE_ACCESS_TOKEN: "${HARBOR_SUPABASE_TOKEN_PREFIX:-sbp_}${HARBOR_SUPABASE_TOKEN_BODY:-0000000000000000000000000000000000000000}"
+      SUPABASE_PROFILE: /app/.supabase-evals/profile.yaml
+      SUPABASE_PROJECT_ID: evalshostedprojectxy
+      SUPABASE_DB_PASSWORD: postgres
+      PGSSLMODE: disable
+      SUPABASE_EXCLUDED_SERVICES: "gotrue,realtime,storage-api,imgproxy,kong,mailpit,postgrest,postgres-meta,studio,edge-runtime,logflare,vector,supavisor"
+      SUPABASE_PRESTART: "1"
+
+  platform-lite:
+    build:
+      context: ./platform-lite
+    network_mode: host
+    environment:
+      ACCESS_TOKEN: "${HARBOR_SUPABASE_TOKEN_PREFIX:-sbp_}${HARBOR_SUPABASE_TOKEN_BODY:-0000000000000000000000000000000000000000}"
+      HOST: 0.0.0.0
+      PG_PORT: "6543"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:7070/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 2s
+      timeout: 5s
+      retries: 20
+      start_period: 5s

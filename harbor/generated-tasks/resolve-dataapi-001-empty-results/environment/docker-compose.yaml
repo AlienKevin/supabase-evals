@@ -1,0 +1,22 @@
+services:
+  main:
+    depends_on:
+      platform-lite:
+        condition: service_healthy
+    environment:
+      SUPABASE_PLATFORM_URL: http://platform-lite:7070
+      SUPABASE_PROJECT_REF: supabase-eval
+
+  platform-lite:
+    build:
+      context: ./platform-lite
+    environment:
+      PGVECTOR: "0"
+    expose:
+      - "7070"
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:7070/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 2s
+      timeout: 5s
+      retries: 20
+      start_period: 5s

@@ -1,0 +1,43 @@
+schema_version = "1.0"
+
+[task]
+name = "supabase/build-functions-006-dual-auth-with-server"
+description = "Harbor adaptation of Supabase eval build-functions-006-dual-auth-with-server"
+authors = [{ name = "Supabase" }, { name = "Harbor migration prototype" }]
+keywords = ["supabase", "eval", "build", "regression", "edge-functions", "auth", "database", "sdk", "rls", "security"]
+
+[metadata]
+source_repository = "https://github.com/supabase/evals"
+source_eval = "build-functions-006-dual-auth-with-server"
+source_path = "evals/build-functions-006-dual-auth-with-server"
+source_stage = "build"
+source_suite = "regression"
+source_interface = "cli"
+source_products = ["edge-functions", "auth", "database"]
+source_topics = ["sdk", "rls", "security"]
+source_mode = "local-stack"
+migration_status = "runnable-pilot"
+scorer_features = ["database", "localCommands", "localFiles"]
+source_prompt_sha256 = "b0605e8e26eaf65b35828fba4b2b140599cba9c2bde787cefc56f83be74971af"
+source_scorer_sha256 = "81846d97bedfe85ed687f2bd4eed4f2dd4120fad406cd3561d1a3aed62c2f188"
+scorer_authority = "upstream-eval"
+judge_policy = "preserve-source-judge"
+
+[verifier]
+timeout_sec = 120.0
+network_mode = "public"
+
+[agent]
+timeout_sec = 720.0
+network_mode = "public"
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 4
+memory_mb = 8192
+storage_mb = 20480
+gpus = 0
+
+[verifier.env]
+
+[solution.env]

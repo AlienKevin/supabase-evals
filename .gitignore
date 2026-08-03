@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.venv/
+.env
+.env*.local
+.DS_Store
+results/*/
+.sync-tmp/
+jobs/
+targeted-parity-3x/
+harbor-modal-*/
+harbor-oracle-*/
+harbor-parity-*/
+harbor-source-*/
+*.log
+**/__pycache__/
+*.pyc

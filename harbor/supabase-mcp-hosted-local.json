@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "supabase-mcp": {
+      "command": "mcp-server-supabase",
+      "args": [
+        "--api-url",
+        "http://127.0.0.1:7070",
+        "--access-token",
+        "dev-token",
+        "--features",
+        "docs,account,database,development,debugging,functions"
+      ]
+    }
+  }
+}

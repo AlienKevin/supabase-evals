@@ -1,0 +1,1288 @@
+{
+  "schemaVersion": 1,
+  "sourceRepository": "https://github.com/supabase/evals",
+  "target": "https://github.com/harbor-framework/harbor",
+  "generatedAt": "2026-08-03T03:21:38.015Z",
+  "counts": {
+    "total": 38,
+    "runnablePilots": 38,
+    "scaffolded": 0,
+    "tools": 25,
+    "localStack": 13,
+    "llmJudge": 16
+  },
+  "tasks": [
+    {
+      "id": "build-cli-001-bootstrap-app",
+      "sourcePath": "evals/build-cli-001-bootstrap-app",
+      "harborPath": "harbor/generated-tasks/build-cli-001-bootstrap-app",
+      "mode": "local-stack",
+      "interface": "cli",
+      "hasLocal": false,
+      "hasRemote": false,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "build",
+        "suite": "benchmark",
+        "product": [
+          "database",
+          "data-api"
+        ],
+        "topic": [
+          "migrations",
+          "rls"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": true,
+        "localFiles": true,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "build-cli-002-declarative-schema",
+      "sourcePath": "evals/build-cli-002-declarative-schema",
+      "harborPath": "harbor/generated-tasks/build-cli-002-declarative-schema",
+      "mode": "local-stack",
+      "interface": "cli",
+      "hasLocal": true,
+      "hasRemote": false,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "build",
+        "suite": "benchmark",
+        "product": [
+          "database"
+        ],
+        "topic": [
+          "declarative-schema",
+          "migrations"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": true,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": true,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "build-cli-003-pg-cron-queue-workflow",
+      "sourcePath": "evals/build-cli-003-pg-cron-queue-workflow",
+      "harborPath": "harbor/generated-tasks/build-cli-003-pg-cron-queue-workflow",
+      "mode": "local-stack",
+      "interface": "cli",
+      "hasLocal": true,
+      "hasRemote": false,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "build",
+        "suite": "benchmark",
+        "product": [
+          "database",
+          "edge-functions",
+          "cron",
+          "queues"
+        ],
+        "topic": [
+          "sql",
+          "sdk"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": true,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "build-database-001-migrate-postgres-to-supabase",
+      "sourcePath": "evals/build-database-001-migrate-postgres-to-supabase",
+      "harborPath": "harbor/generated-tasks/build-database-001-migrate-postgres-to-supabase",
+      "mode": "local-stack",
+      "interface": "cli",
+      "hasLocal": true,
+      "hasRemote": false,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "build",
+        "suite": "benchmark",
+        "product": [
+          "database"
+        ],
+        "topic": [
+          "migrations"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "build-frontend-001-todos-app",
+      "sourcePath": "evals/build-frontend-001-todos-app",
+      "harborPath": "harbor/generated-tasks/build-frontend-001-todos-app",
+      "mode": "local-stack",
+      "interface": null,
+      "hasLocal": true,
+      "hasRemote": false,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "build",
+        "suite": "other",
+        "product": [
+          "database",
+          "auth"
+        ],
+        "topic": [
+          "rls",
+          "sdk"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": false,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": true,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "build-functions-001-order-total",
+      "sourcePath": "evals/build-functions-001-order-total",
+      "harborPath": "harbor/generated-tasks/build-functions-001-order-total",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": false,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "build",
+        "suite": "other",
+        "product": [
+          "edge-functions",
+          "data-api"
+        ],
+        "topic": [
+          "sdk"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": false,
+        "managementApi": false,
+        "edgeFunctions": true,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "build-functions-002-edge-auth-db",
+      "sourcePath": "evals/build-functions-002-edge-auth-db",
+      "harborPath": "harbor/generated-tasks/build-functions-002-edge-auth-db",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "build",
+        "suite": "other",
+        "product": [
+          "edge-functions",
+          "database",
+          "auth"
+        ],
+        "topic": [
+          "security",
+          "sdk"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": true,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "build-functions-003-todos-crud-api",
+      "sourcePath": "evals/build-functions-003-todos-crud-api",
+      "harborPath": "harbor/generated-tasks/build-functions-003-todos-crud-api",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "build",
+        "suite": "other",
+        "product": [
+          "edge-functions",
+          "database"
+        ],
+        "topic": [
+          "sdk"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "build-functions-004-service-role-bypass",
+      "sourcePath": "evals/build-functions-004-service-role-bypass",
+      "harborPath": "harbor/generated-tasks/build-functions-004-service-role-bypass",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "build",
+        "suite": "benchmark",
+        "product": [
+          "edge-functions",
+          "auth",
+          "database"
+        ],
+        "topic": [
+          "rls",
+          "security",
+          "sdk"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": true,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "build-functions-005-dual-auth-user-secret",
+      "sourcePath": "evals/build-functions-005-dual-auth-user-secret",
+      "harborPath": "harbor/generated-tasks/build-functions-005-dual-auth-user-secret",
+      "mode": "local-stack",
+      "interface": "cli",
+      "hasLocal": true,
+      "hasRemote": false,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "build",
+        "suite": "benchmark",
+        "product": [
+          "edge-functions",
+          "auth",
+          "database"
+        ],
+        "topic": [
+          "sdk",
+          "rls",
+          "security"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": true,
+        "localFiles": true,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "build-functions-006-dual-auth-with-server",
+      "sourcePath": "evals/build-functions-006-dual-auth-with-server",
+      "harborPath": "harbor/generated-tasks/build-functions-006-dual-auth-with-server",
+      "mode": "local-stack",
+      "interface": "cli",
+      "hasLocal": true,
+      "hasRemote": false,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "build",
+        "suite": "regression",
+        "product": [
+          "edge-functions",
+          "auth",
+          "database"
+        ],
+        "topic": [
+          "sdk",
+          "rls",
+          "security"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": true,
+        "localFiles": true,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "build-realtime-001-live-chat-updates",
+      "sourcePath": "evals/build-realtime-001-live-chat-updates",
+      "harborPath": "harbor/generated-tasks/build-realtime-001-live-chat-updates",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "build",
+        "suite": "regression",
+        "product": [
+          "realtime",
+          "database"
+        ],
+        "topic": [
+          "sql"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": true,
+        "llmJudge": true
+      }
+    },
+    {
+      "id": "build-rls-002-own-todos-client",
+      "sourcePath": "evals/build-rls-002-own-todos-client",
+      "harborPath": "harbor/generated-tasks/build-rls-002-own-todos-client",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "build",
+        "suite": "other",
+        "product": [
+          "database",
+          "auth"
+        ],
+        "topic": [
+          "rls",
+          "sdk",
+          "security"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "build-rls-003-org-roles-permissions",
+      "sourcePath": "evals/build-rls-003-org-roles-permissions",
+      "harborPath": "harbor/generated-tasks/build-rls-003-org-roles-permissions",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "build",
+        "suite": "other",
+        "product": [
+          "database",
+          "auth"
+        ],
+        "topic": [
+          "rls",
+          "security"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "build-storage-001-private-bucket-access",
+      "sourcePath": "evals/build-storage-001-private-bucket-access",
+      "harborPath": "harbor/generated-tasks/build-storage-001-private-bucket-access",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": false,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "build",
+        "suite": "benchmark",
+        "product": [
+          "storage",
+          "database"
+        ],
+        "topic": [
+          "rls",
+          "sdk"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": true,
+        "llmJudge": true
+      }
+    },
+    {
+      "id": "build-tests-001-rls-tenant-isolation",
+      "sourcePath": "evals/build-tests-001-rls-tenant-isolation",
+      "harborPath": "harbor/generated-tasks/build-tests-001-rls-tenant-isolation",
+      "mode": "local-stack",
+      "interface": "cli",
+      "hasLocal": true,
+      "hasRemote": false,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "build",
+        "suite": "benchmark",
+        "product": [
+          "database"
+        ],
+        "topic": [
+          "tests",
+          "rls"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": false,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": true,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": true,
+        "llmJudge": true
+      }
+    },
+    {
+      "id": "build-vectors-001-rag-with-permissions",
+      "sourcePath": "evals/build-vectors-001-rag-with-permissions",
+      "harborPath": "harbor/generated-tasks/build-vectors-001-rag-with-permissions",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "build",
+        "suite": "benchmark",
+        "product": [
+          "database",
+          "vectors"
+        ],
+        "topic": [
+          "sql",
+          "rls"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "deploy-database-001-prometheus-metrics",
+      "sourcePath": "evals/deploy-database-001-prometheus-metrics",
+      "harborPath": "harbor/generated-tasks/deploy-database-001-prometheus-metrics",
+      "mode": "local-stack",
+      "interface": null,
+      "hasLocal": true,
+      "hasRemote": false,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "deploy",
+        "suite": "benchmark",
+        "product": [
+          "database"
+        ],
+        "topic": [
+          "observability"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": false,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": true
+      }
+    },
+    {
+      "id": "deploy-functions-001-edge-function-secrets",
+      "sourcePath": "evals/deploy-functions-001-edge-function-secrets",
+      "harborPath": "harbor/generated-tasks/deploy-functions-001-edge-function-secrets",
+      "mode": "local-stack",
+      "interface": "cli",
+      "hasLocal": true,
+      "hasRemote": false,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "deploy",
+        "suite": "benchmark",
+        "product": [
+          "edge-functions"
+        ],
+        "topic": [
+          "security"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": false,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": true,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": true,
+        "transcript": false,
+        "llmJudge": true
+      }
+    },
+    {
+      "id": "deploy-self-hosting-001-docker-compose",
+      "sourcePath": "evals/deploy-self-hosting-001-docker-compose",
+      "harborPath": "harbor/generated-tasks/deploy-self-hosting-001-docker-compose",
+      "mode": "local-stack",
+      "interface": "cli",
+      "hasLocal": false,
+      "hasRemote": false,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "deploy",
+        "suite": "benchmark",
+        "product": [
+          "database",
+          "auth",
+          "storage"
+        ],
+        "topic": [
+          "self-hosting"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": false,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": true,
+        "localFiles": true,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "investigate-auth-001-deleted-user-access",
+      "sourcePath": "evals/investigate-auth-001-deleted-user-access",
+      "harborPath": "harbor/generated-tasks/investigate-auth-001-deleted-user-access",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "investigate",
+        "suite": "benchmark",
+        "product": [
+          "auth"
+        ],
+        "topic": [
+          "security",
+          "sdk"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": true,
+        "llmJudge": true
+      }
+    },
+    {
+      "id": "investigate-db-001-table-row-counts",
+      "sourcePath": "evals/investigate-db-001-table-row-counts",
+      "harborPath": "harbor/generated-tasks/investigate-db-001-table-row-counts",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "investigate",
+        "suite": "other",
+        "product": [
+          "database"
+        ],
+        "topic": [
+          "observability"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": true,
+        "database": false,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "investigate-functions-001-546-resource-limit",
+      "sourcePath": "evals/investigate-functions-001-546-resource-limit",
+      "harborPath": "harbor/generated-tasks/investigate-functions-001-546-resource-limit",
+      "mode": "tools",
+      "interface": null,
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "investigate",
+        "suite": "regression",
+        "product": [
+          "edge-functions"
+        ],
+        "topic": [
+          "observability"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": false,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": true,
+        "llmJudge": true
+      }
+    },
+    {
+      "id": "investigate-logs-001-top-error-function",
+      "sourcePath": "evals/investigate-logs-001-top-error-function",
+      "harborPath": "harbor/generated-tasks/investigate-logs-001-top-error-function",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "investigate",
+        "suite": "other",
+        "product": [
+          "edge-functions"
+        ],
+        "topic": [
+          "observability"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": true,
+        "database": false,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "investigate-realtime-001-subscribed-no-events",
+      "sourcePath": "evals/investigate-realtime-001-subscribed-no-events",
+      "harborPath": "harbor/generated-tasks/investigate-realtime-001-subscribed-no-events",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "investigate",
+        "suite": "benchmark",
+        "product": [
+          "realtime",
+          "database"
+        ],
+        "topic": [
+          "sdk"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": true,
+        "llmJudge": true
+      }
+    },
+    {
+      "id": "investigate-reliability-001-error-rate-spike",
+      "sourcePath": "evals/investigate-reliability-001-error-rate-spike",
+      "harborPath": "harbor/generated-tasks/investigate-reliability-001-error-rate-spike",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "investigate",
+        "suite": "other",
+        "product": [
+          "edge-functions"
+        ],
+        "topic": [
+          "observability"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": true,
+        "database": false,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "investigate-reliability-002-subtle-error-spike",
+      "sourcePath": "evals/investigate-reliability-002-subtle-error-spike",
+      "harborPath": "harbor/generated-tasks/investigate-reliability-002-subtle-error-spike",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "investigate",
+        "suite": "other",
+        "product": [
+          "edge-functions"
+        ],
+        "topic": [
+          "observability"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": true,
+        "database": false,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "investigate-reliability-003-edge-function-5xx-correlation",
+      "sourcePath": "evals/investigate-reliability-003-edge-function-5xx-correlation",
+      "harborPath": "harbor/generated-tasks/investigate-reliability-003-edge-function-5xx-correlation",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "investigate",
+        "suite": "benchmark",
+        "product": [
+          "edge-functions"
+        ],
+        "topic": [
+          "observability"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": false,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": true,
+        "llmJudge": true
+      }
+    },
+    {
+      "id": "investigate-security-001-public-table",
+      "sourcePath": "evals/investigate-security-001-public-table",
+      "harborPath": "harbor/generated-tasks/investigate-security-001-public-table",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "investigate",
+        "suite": "other",
+        "product": [
+          "database"
+        ],
+        "topic": [
+          "security",
+          "rls",
+          "observability"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": true,
+        "database": false,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": true,
+        "llmJudge": true
+      }
+    },
+    {
+      "id": "resolve-dataapi-001-empty-results",
+      "sourcePath": "evals/resolve-dataapi-001-empty-results",
+      "harborPath": "harbor/generated-tasks/resolve-dataapi-001-empty-results",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "resolve",
+        "suite": "benchmark",
+        "product": [
+          "data-api",
+          "database",
+          "auth"
+        ],
+        "topic": [
+          "rls",
+          "sdk"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": true,
+        "llmJudge": true
+      }
+    },
+    {
+      "id": "resolve-dataapi-002-secure-default-grants",
+      "sourcePath": "evals/resolve-dataapi-002-secure-default-grants",
+      "harborPath": "harbor/generated-tasks/resolve-dataapi-002-secure-default-grants",
+      "mode": "local-stack",
+      "interface": "cli",
+      "hasLocal": true,
+      "hasRemote": false,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "resolve",
+        "suite": "regression",
+        "product": [
+          "data-api",
+          "database",
+          "auth"
+        ],
+        "topic": [
+          "rls",
+          "sdk"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": true,
+        "localFiles": true,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": true,
+        "llmJudge": true
+      }
+    },
+    {
+      "id": "resolve-dataapi-002-update-zero-rows-affected",
+      "sourcePath": "evals/resolve-dataapi-002-update-zero-rows-affected",
+      "harborPath": "harbor/generated-tasks/resolve-dataapi-002-update-zero-rows-affected",
+      "mode": "tools",
+      "interface": null,
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "resolve",
+        "suite": "regression",
+        "product": [
+          "data-api",
+          "database"
+        ],
+        "topic": [
+          "rls"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": true,
+        "llmJudge": true
+      }
+    },
+    {
+      "id": "resolve-database-001-migration-history-mismatch",
+      "sourcePath": "evals/resolve-database-001-migration-history-mismatch",
+      "harborPath": "harbor/generated-tasks/resolve-database-001-migration-history-mismatch",
+      "mode": "local-stack",
+      "interface": "cli",
+      "hasLocal": true,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "resolve",
+        "suite": "benchmark",
+        "product": [
+          "database"
+        ],
+        "topic": [
+          "migrations"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": false,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": true,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": true,
+        "transcript": true,
+        "llmJudge": true
+      }
+    },
+    {
+      "id": "resolve-performance-001-slow-query-cpu-spike",
+      "sourcePath": "evals/resolve-performance-001-slow-query-cpu-spike",
+      "harborPath": "harbor/generated-tasks/resolve-performance-001-slow-query-cpu-spike",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "resolve",
+        "suite": "benchmark",
+        "product": [
+          "database"
+        ],
+        "topic": [
+          "observability",
+          "sql"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": true,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "resolve-reliability-001-unhealthy-project-recovery",
+      "sourcePath": "evals/resolve-reliability-001-unhealthy-project-recovery",
+      "harborPath": "harbor/generated-tasks/resolve-reliability-001-unhealthy-project-recovery",
+      "mode": "tools",
+      "interface": null,
+      "hasLocal": false,
+      "hasRemote": false,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "resolve",
+        "suite": "regression",
+        "product": [
+          "database"
+        ],
+        "topic": [
+          "observability"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": false,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": true,
+        "llmJudge": true
+      }
+    },
+    {
+      "id": "resolve-security-001-rls-cross-user-leak",
+      "sourcePath": "evals/resolve-security-001-rls-cross-user-leak",
+      "harborPath": "harbor/generated-tasks/resolve-security-001-rls-cross-user-leak",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "resolve",
+        "suite": "other",
+        "product": [
+          "database",
+          "auth"
+        ],
+        "topic": [
+          "rls",
+          "security"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "resolve-security-002-rls-cross-tenant-leak",
+      "sourcePath": "evals/resolve-security-002-rls-cross-tenant-leak",
+      "harborPath": "harbor/generated-tasks/resolve-security-002-rls-cross-tenant-leak",
+      "mode": "tools",
+      "interface": "mcp",
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "resolve",
+        "suite": "benchmark",
+        "product": [
+          "database",
+          "auth"
+        ],
+        "topic": [
+          "rls",
+          "security"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": false,
+        "llmJudge": false
+      }
+    },
+    {
+      "id": "resolve-storage-001-upsert-missing-update-policy",
+      "sourcePath": "evals/resolve-storage-001-upsert-missing-update-policy",
+      "harborPath": "harbor/generated-tasks/resolve-storage-001-upsert-missing-update-policy",
+      "mode": "tools",
+      "interface": null,
+      "hasLocal": false,
+      "hasRemote": true,
+      "status": "runnable-pilot",
+      "metadata": {
+        "stage": "resolve",
+        "suite": "regression",
+        "product": [
+          "storage",
+          "database"
+        ],
+        "topic": [
+          "rls"
+        ]
+      },
+      "scorerFeatures": {
+        "agentReport": false,
+        "database": true,
+        "managementApi": false,
+        "edgeFunctions": false,
+        "localCommands": false,
+        "localFiles": false,
+        "projectBuild": false,
+        "hostedProject": false,
+        "transcript": true,
+        "llmJudge": true
+      }
+    }
+  ]
+}

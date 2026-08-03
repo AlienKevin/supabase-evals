@@ -1,0 +1,17 @@
+{
+  "name": "supabase-evals-platform-lite-sidecar",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@electric-sql/pglite": "0.4.5",
+    "@electric-sql/pglite-socket": "0.1.5",
+    "@hono/node-server": "^1.13.8",
+    "@supabase/lite": "0.7.1-next.3",
+    "@supabase/supabase-js": "^2.105.1",
+    "hono": "^4.7.7",
+    "openapi-fetch": "^0.13.8",
+    "typescript": "^5.9.3",
+    "tsx": "^4.21.0",
+    "zod": "^4.4.3"
+  }
+}

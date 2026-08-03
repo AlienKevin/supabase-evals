@@ -1,0 +1,39 @@
+name: Publish verified Supabase Harbor adapter
+
+on:
+  push:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    if: github.repository == 'AlienKevin/supabase-evals'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Publish audited source snapshot
+        env:
+          SNAPSHOT_URL: https://harbor-adapters--supabase-evals-overlay.modal.run
+          SNAPSHOT_SHA256: 2ef6382950e6ee2cb990445fdd3b6c813a9020f9439a5098c1d8b780fadf3830
+          AGENT_SKILLS_SHA: 1207767388a0ffb55f21fb4e6988fee96942431d
+        run: |
+          set -euo pipefail
+          cp .github/workflows/publish-adapter.yml /tmp/publish-adapter.yml
+          git checkout --orphan release-main
+          git rm -rf .
+          curl --fail --silent --show-error --location "$SNAPSHOT_URL" -o /tmp/supabase-evals-snapshot.tgz
+          echo "$SNAPSHOT_SHA256  /tmp/supabase-evals-snapshot.tgz" | sha256sum --check -
+          tar -xzf /tmp/supabase-evals-snapshot.tgz
+          rm -rf .github/workflows
+          mkdir -p .github/workflows
+          cp /tmp/publish-adapter.yml .github/workflows/publish-adapter.yml
+          git config user.name "Kevin Li"
+          git config user.email "AlienKevin@users.noreply.github.com"
+          git add --all
+          git update-index --add --cacheinfo "160000,$AGENT_SKILLS_SHA,submodules/agent-skills"
+          git commit -m "Publish Supabase evals Harbor v0.20 adapter"
+          git branch -M main
+          git push --no-thin --force origin main
