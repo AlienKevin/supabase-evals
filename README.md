@@ -14,15 +14,15 @@ scheduled maintenance workflows with a no-model Harbor adapter contract check.
 
 - 38/38 upstream evals are packaged in `harbor/generated-tasks/`.
 - 38/38 source-scored Oracle trials pass with reward `1`.
-- GPT-5.6 Sol targeted three-run parity is within the observed upstream
-  variance. The combined Harbor mean is 88.9% versus 83.3% upstream.
+- GPT-5.6 Sol pass@2 matches the upstream benchmark: 19/19 with skills and
+  18/19 without skills, with the same sole failing task.
 - Source LLM judges remain live LLM judges. They are not replaced with
   deterministic approximations.
 
 Evidence:
 
 - [All Oracle trials](https://hub.harborframework.com/jobs/22c7dd72-c84a-4d01-bdd7-eaf3c8865c74)
-- [GPT-5.6 Sol parity trials](https://hub.harborframework.com/jobs/d4023397-3a5e-4899-b486-c15ee34155f6)
+- [GPT-5.6 Sol pass@2 trials](https://hub.harborframework.com/jobs/33cb0867-ffba-491e-a77b-37955db742a4)
 - [Example published task](https://hub.harborframework.com/tasks/supabase/investigate-auth-001-deleted-user-access/latest)
 
 Harbor Hub sign-in may be required for private evidence jobs.
