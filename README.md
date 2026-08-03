@@ -6,6 +6,10 @@ prompts, fixtures, skills, and `EVAL.ts` scorers authoritative, and adds the
 Harbor task packaging and runtime bridge needed to run the same benchmark
 locally or on Modal.
 
+Upstream source snapshot: [`supabase/evals@8c145f4`](https://github.com/supabase/evals/commit/8c145f42def067bdeff1952cef7c23592f315d9c).
+The benchmark source files are retained; this fork replaces the upstream
+scheduled maintenance workflows with a no-model Harbor adapter contract check.
+
 ## Current status
 
 - 38/38 upstream evals are packaged in `harbor/generated-tasks/`.
