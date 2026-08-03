@@ -1,0 +1,51 @@
+{
+  "job_name": "oracle-final-tools-v2",
+  "jobs_dir": "targeted-parity-3x/oracle-final-tools-v2",
+  "n_attempts": 1,
+  "n_concurrent_trials": 25,
+  "timeout_multiplier": 3.0,
+  "retry": { "max_retries": 2 },
+  "environment": {
+    "type": "modal",
+    "force_build": false,
+    "delete": true,
+    "kwargs": { "modal_vm_runtime": true }
+  },
+  "verifier": {
+    "env": {
+      "HARBOR_SOURCE_SCORER": "1",
+      "HARBOR_JUDGE_COMMAND": "curl --fail-with-body --silent --show-error --max-time 300 -X POST https://harbor-adapters--supabase-eval-judge.modal.run -H \"content-type: application/json\" --data-binary @\"$HARBOR_JUDGE_PAYLOAD_FILE\""
+    }
+  },
+  "agents": [{ "name": "oracle", "model_name": "harbor/oracle" }],
+  "datasets": [{
+    "path": "harbor/generated-tasks",
+    "task_names": [
+      "build-functions-001-order-total",
+      "build-functions-002-edge-auth-db",
+      "build-functions-003-todos-crud-api",
+      "build-functions-004-service-role-bypass",
+      "build-realtime-001-live-chat-updates",
+      "build-rls-002-own-todos-client",
+      "build-rls-003-org-roles-permissions",
+      "build-storage-001-private-bucket-access",
+      "build-vectors-001-rag-with-permissions",
+      "investigate-auth-001-deleted-user-access",
+      "investigate-db-001-table-row-counts",
+      "investigate-functions-001-546-resource-limit",
+      "investigate-logs-001-top-error-function",
+      "investigate-realtime-001-subscribed-no-events",
+      "investigate-reliability-001-error-rate-spike",
+      "investigate-reliability-002-subtle-error-spike",
+      "investigate-reliability-003-edge-function-5xx-correlation",
+      "investigate-security-001-public-table",
+      "resolve-dataapi-001-empty-results",
+      "resolve-dataapi-002-update-zero-rows-affected",
+      "resolve-performance-001-slow-query-cpu-spike",
+      "resolve-reliability-001-unhealthy-project-recovery",
+      "resolve-security-001-rls-cross-user-leak",
+      "resolve-security-002-rls-cross-tenant-leak",
+      "resolve-storage-001-upsert-missing-update-policy"
+    ]
+  }]
+}

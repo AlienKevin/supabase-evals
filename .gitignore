@@ -7,6 +7,8 @@ dist/
 results/*/
 .sync-tmp/
 jobs/
+!harbor/jobs/
+!harbor/jobs/**
 targeted-parity-3x/
 harbor-modal-*/
 harbor-oracle-*/

@@ -154,19 +154,20 @@ modal app stop supabase-eval-judge --env main --yes
 
 ## Run GPT-5.6 Sol parity on Modal
 
-The full skills and no-skills matrices are configured here:
+The upstream benchmark reports pass@2: each task gets at most two fresh
+attempts, stopping after the first pass. A retry starts with a clean environment
+and model session and does not receive grader feedback.
+
+Run the matching two-attempt Harbor matrices with:
 
 ```bash
-harbor run -c harbor/jobs/sol-final-skills.json --yes
-harbor run -c harbor/jobs/sol-final-noskills.json --yes
+harbor run -c harbor/jobs/sol-pass-at-2-skills.json --yes
+harbor run -c harbor/jobs/sol-pass-at-2-noskills.json --yes
 ```
 
-The focused three-attempt variance study is reproducible with:
-
-```bash
-harbor run -c harbor/jobs/targeted-parity-3x-skills-postfix.json --yes
-harbor run -c harbor/jobs/targeted-parity-3x-noskills-postfix.json --yes
-```
+Harbor records both independent attempts, so the pass@2 score is the fraction
+of tasks with reward 1 in either attempt. This is outcome-equivalent to the
+upstream stop-on-pass policy, while retaining both traces for inspection.
 
 These Codex jobs use GPT-5.6 Sol at medium reasoning. Agent authentication is
 handled by Harbor's Codex integration; the separate source judge transport
@@ -180,8 +181,8 @@ uses the Modal secret above.
   agent as an editable answer file.
 - The upstream local fixture is copied into the Harbor workspace.
 - Skills and no-skills configurations remain separate.
-- Infrastructure exceptions may be retried. A valid reward-zero model outcome
-  is retained and is never retried away.
+- Pass@2 model attempts and infrastructure retries are separate. Every valid
+  reward-zero attempt remains visible; infrastructure failures have no score.
 
 See [`harbor/README.md`](harbor/README.md) for adapter architecture and
 [`harbor/PARITY_STATUS.md`](harbor/PARITY_STATUS.md) for the evidence ledger.

@@ -1,0 +1,47 @@
+{
+  "job_name": "supabase-sol-pass-at-2-noskills",
+  "jobs_dir": "harbor-pass-at-2-noskills",
+  "n_attempts": 2,
+  "n_concurrent_trials": 38,
+  "timeout_multiplier": 3.0,
+  "retry": {
+    "max_retries": 2
+  },
+  "environment": {
+    "type": "modal",
+    "force_build": false,
+    "delete": true,
+    "kwargs": {
+      "modal_vm_runtime": true
+    }
+  },
+  "verifier": {
+    "env": {
+      "HARBOR_SOURCE_SCORER": "1",
+      "HARBOR_JUDGE_COMMAND": "curl --fail-with-body --silent --show-error --max-time 300 -X POST https://harbor-adapters--supabase-eval-judge.modal.run -H \"content-type: application/json\" --data-binary @\"$HARBOR_JUDGE_PAYLOAD_FILE\""
+    }
+  },
+  "agents": [
+    {
+      "name": "codex",
+      "model_name": "gpt-5.6-sol",
+      "n_concurrent": 8,
+      "kwargs": {
+        "reasoning_effort": "medium",
+        "version": "0.138.0"
+      },
+      "mcp_servers": [
+        {
+          "name": "supabase-mcp",
+          "transport": "stdio",
+          "command": "supabase-mcp-harbor"
+        }
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "path": "harbor/generated-tasks"
+    }
+  ]
+}

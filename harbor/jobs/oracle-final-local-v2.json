@@ -1,0 +1,39 @@
+{
+  "job_name": "oracle-final-local-v2",
+  "jobs_dir": "targeted-parity-3x/oracle-final-local-v2",
+  "n_attempts": 1,
+  "n_concurrent_trials": 6,
+  "timeout_multiplier": 3.0,
+  "retry": { "max_retries": 2 },
+  "environment": {
+    "type": "modal",
+    "force_build": false,
+    "delete": true,
+    "kwargs": { "modal_vm_runtime": true }
+  },
+  "verifier": {
+    "env": {
+      "HARBOR_SOURCE_SCORER": "1",
+      "HARBOR_JUDGE_COMMAND": "curl --fail-with-body --silent --show-error --max-time 300 -X POST https://harbor-adapters--supabase-eval-judge.modal.run -H \"content-type: application/json\" --data-binary @\"$HARBOR_JUDGE_PAYLOAD_FILE\""
+    }
+  },
+  "agents": [{ "name": "oracle", "model_name": "harbor/oracle" }],
+  "datasets": [{
+    "path": "harbor/generated-tasks",
+    "task_names": [
+      "build-cli-001-bootstrap-app",
+      "build-cli-002-declarative-schema",
+      "build-cli-003-pg-cron-queue-workflow",
+      "build-database-001-migrate-postgres-to-supabase",
+      "build-frontend-001-todos-app",
+      "build-functions-005-dual-auth-user-secret",
+      "build-functions-006-dual-auth-with-server",
+      "build-tests-001-rls-tenant-isolation",
+      "deploy-database-001-prometheus-metrics",
+      "deploy-functions-001-edge-function-secrets",
+      "deploy-self-hosting-001-docker-compose",
+      "resolve-dataapi-002-secure-default-grants",
+      "resolve-database-001-migration-history-mismatch"
+    ]
+  }]
+}
